@@ -90,7 +90,7 @@ int getcommand(char* args[MAX_LINE / 2 + 1], char str[1024])
             printf("NULL array space\n");
         j=0;
 		if(str[i]!='\n')
-		if(args[size]==NULL)
+		//if(args[size]==NULL)
 		args[size]=(char*) malloc(sizeof(char)*30);
 		}
 
