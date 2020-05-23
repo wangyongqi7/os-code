@@ -114,7 +114,6 @@ int getcommand(char* argv[MAX_LINE / 2 + 1], char str[1024])
         }
     }
     argv[size] = NULL;
-    printf("%d\n", history[bool_out]);
 
         return 0;
 } 
@@ -144,9 +143,9 @@ int execution(char* argv[MAX_LINE / 2 + 1] ,char *str){
                 {
                     in_file[i - bool_in] = history[i];
                 }
-                printf("in %s\n", in_file);
+                
                int fd =open(in_file, O_RDWR|O_CREAT|O_TRUNC, 0664);
-                printf("%s\n", in_file);
+               
                 if(fd == -1)perror("open"),exit( 1 );
                 //重定向操作
                 dup2(fd,STDIN_FILENO); //dup2(oldfd, newfd);
@@ -160,9 +159,9 @@ int execution(char* argv[MAX_LINE / 2 + 1] ,char *str){
                 {
                     out_file[i - bool_out] = history[i];
                 }
-                printf("out %s\n",out_file);
+                
                 int fd =open(out_file, O_RDWR|O_CREAT|O_TRUNC, 0664);
-                printf("out %s\n", out_file);
+               
                 if(fd == -1)perror("open"),exit( 1 );
                 //重定向操作
                 dup2(fd, STDOUT_FILENO); //dup2(oldfd, newfd);
