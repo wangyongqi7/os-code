@@ -133,21 +133,17 @@ int clear()
     {
         int flagclear = 0;
         for (int j = 0; j < NUMBER_OF_RESOURCES; j++)
-        {
             if (need [i][j]>0)
                 flagclear = 1;
-        }
+
         if(flagclear==0)
-        {
-            
             for(int j=0;j<NUMBER_OF_RESOURCES;j++)
             {
                 available[j] += allocation[i][j];
                 allocation[i][j] = 0;
             }
-                
-        }
     }
+    
 }
 
 void initial()
